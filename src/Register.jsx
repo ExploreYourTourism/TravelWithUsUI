@@ -1,4 +1,5 @@
 import "./Register.css";
+import { Link } from 'react-router-dom';
 import charminar from "./assets/images/charminar.jpg";
 
 function Register() {
@@ -27,7 +28,7 @@ function Register() {
             REGISTER
           </button>
           <p className="login-link">
-            Already have an account? <a href="/login">Login</a>
+            Already have an account? <Link to="/login">Login</Link>
           </p>
         </div>
       </div>
