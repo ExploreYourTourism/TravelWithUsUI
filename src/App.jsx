@@ -1,20 +1,25 @@
-import { useState } from 'react'
 import { Routes, Route } from 'react-router-dom'
-import './App.css'
-import Login from './Login.jsx'
+import { CartProvider } from './contexts/CartContext'
+import { AuthProvider } from './contexts/AuthContext'
+import Login from './login.jsx'
 import Register from './Register.jsx'
+import Home from './Home.jsx'
+import Cart from './Cart.jsx'
+import ForgotPassword from './ForgotPassword.jsx'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <Routes>
-        <Route path="/" element={<Register />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
-      </Routes>
-    </>
+    <AuthProvider>
+      <CartProvider>
+        <Routes>
+          <Route path="/"                element={<Home />} />
+          <Route path="/login"           element={<Login />} />
+          <Route path="/register"        element={<Register />} />
+          <Route path="/cart"            element={<Cart />} />
+          <Route path="/forgot-password" element={<ForgotPassword />} />
+        </Routes>
+      </CartProvider>
+    </AuthProvider>
   )
 }
 
