@@ -48,10 +48,10 @@ function Home() {
         </div>
 
         <div className="menu d-flex align-items-center gap-2 gap-md-3">
-          <button onClick={() => navigate('/')} className="menu-btn">Home</button>
-          <button className="menu-btn">Places</button>
-          <button className="menu-btn">Gallery</button>
-          <button className="menu-btn">Contact</button>
+          <button onClick={() => navigate('/')}        className="menu-btn nav-active">Home</button>
+          <button onClick={() => navigate('/places')}  className="menu-btn">Places</button>
+          <button onClick={() => navigate('/gallery')} className="menu-btn">Gallery</button>
+          <button onClick={() => navigate('/contact')} className="menu-btn">Contact</button>
 
           {/* Cart icon */}
           <button className="cart-icon-btn" onClick={() => navigate('/cart')} title="My Trip Cart">
