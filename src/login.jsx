@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { FaUser, FaLock, FaFacebookF, FaTwitter, FaGoogle } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import "./Login.css";
 import LeftPanel from "./LeftPanel";
 
 function Login() {
@@ -49,19 +48,19 @@ function Login() {
   };
 
   return (
-    <div className="login-container">
+    <div className="auth-container">
       <LeftPanel 
         title="Welcome Back" 
         description="Login to continue exploring amazing travel destinations and creating unforgettable memories with us."
       />
 
-      <div className="right-panel">
-        <div className="login-card">
+      <div className="auth-right">
+        <div className="auth-card">
           <h1>Login</h1>
 
-          <div className="input-group">
-            <label>Username</label>
-            <div className={`input-box ${errors.username ? 'error' : ''}`}>
+          <div className="form-group">
+            <label className="form-label">Username</label>
+            <div className={`form-input-wrapper ${errors.username ? 'error-border' : ''}`}>
               <FaUser className="icon" />
               <input
                 type="text"
@@ -74,9 +73,9 @@ function Login() {
             {errors.username && <span className="error-text">{errors.username}</span>}
           </div>
 
-          <div className="input-group">
-            <label>Password</label>
-            <div className={`input-box ${errors.password ? 'error' : ''}`}>
+          <div className="form-group">
+            <label className="form-label">Password</label>
+            <div className={`form-input-wrapper ${errors.password ? 'error-border' : ''}`}>
               <FaLock className="icon" />
               <input
                 type="password"
@@ -89,17 +88,15 @@ function Login() {
             {errors.password && <span className="error-text">{errors.password}</span>}
           </div>
 
-          <div className="forgot">
+          <div className="forgot-link">
             <a href="#">Forgot password?</a>
           </div>
 
-          <button className="login-btn" onClick={handleLogin}>
+          <button className="btn auth-btn" onClick={handleLogin}>
             LOGIN
           </button>
 
-          <p className="social-text">
-            Or Sign In Using
-          </p>
+          <p className="auth-text">Or Sign In Using</p>
 
           <div className="social-icons">
             <button type="button">
@@ -115,9 +112,8 @@ function Login() {
             </button>
           </div>
 
-          <div className="signup-section">
-            <p>Don't have an account?</p>
-            <Link to="/register">SIGN UP</Link>
+          <div className="auth-footer">
+            <p>Don't have an account? <Link to="/register">SIGN UP</Link></p>
           </div>
         </div>
       </div>

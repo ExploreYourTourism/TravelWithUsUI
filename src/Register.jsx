@@ -1,5 +1,4 @@
 import { useState } from "react";
-import "./Register.css";
 import { Link } from 'react-router-dom';
 import LeftPanel from "./LeftPanel";
 
@@ -70,91 +69,91 @@ function Register() {
   };
 
   return (
-    <div className="register-container">
+    <div className="auth-container">
       <LeftPanel 
         title="Travel With Us" 
         description="Discover amazing destinations and create unforgettable memories."
       />
 
-      <div className="right-panel">
-        <div className="register-card">
+      <div className="auth-right">
+        <div className="auth-card">
           <h2>Create Account</h2>
-          <div style={{ position: 'relative', marginBottom: '8px' }}>
+          <div className="form-group">
             <input 
               type="text" 
               name="fullName"
               placeholder="Full Name"
               value={formData.fullName}
               onChange={handleChange}
-              className={errors.fullName ? 'error-input' : ''}
+              className={`auth-input ${errors.fullName ? 'is-invalid' : ''}`}
             />
             {errors.fullName && <span className="error-text">{errors.fullName}</span>}
           </div>
           
-          <div style={{ position: 'relative', marginBottom: '8px' }}>
+          <div className="form-group">
             <input 
               type="text" 
               name="username"
               placeholder="Username"
               value={formData.username}
               onChange={handleChange}
-              className={errors.username ? 'error-input' : ''}
+              className={`auth-input ${errors.username ? 'is-invalid' : ''}`}
             />
             {errors.username && <span className="error-text">{errors.username}</span>}
           </div>
           
-          <div style={{ position: 'relative', marginBottom: '8px' }}>
+          <div className="form-group">
             <input 
               type="email" 
               name="email"
               placeholder="Email Address"
               value={formData.email}
               onChange={handleChange}
-              className={errors.email ? 'error-input' : ''}
+              className={`auth-input ${errors.email ? 'is-invalid' : ''}`}
             />
             {errors.email && <span className="error-text">{errors.email}</span>}
           </div>
           
-          <div style={{ position: 'relative', marginBottom: '8px' }}>
+          <div className="form-group">
             <input 
               type="tel" 
               name="phone"
               placeholder="Phone Number"
               value={formData.phone}
               onChange={handleChange}
-              className={errors.phone ? 'error-input' : ''}
+              className={`auth-input ${errors.phone ? 'is-invalid' : ''}`}
             />
             {errors.phone && <span className="error-text">{errors.phone}</span>}
           </div>
           
-          <div style={{ position: 'relative', marginBottom: '8px' }}>
+          <div className="form-group">
             <input 
               type="password" 
               name="password"
               placeholder="Password"
               value={formData.password}
               onChange={handleChange}
-              className={errors.password ? 'error-input' : ''}
+              className={`auth-input ${errors.password ? 'is-invalid' : ''}`}
             />
             {errors.password && <span className="error-text">{errors.password}</span>}
           </div>
           
-          <div style={{ position: 'relative', marginBottom: '8px' }}>
+          <div className="form-group">
             <input 
               type="password" 
               name="confirmPassword"
               placeholder="Confirm Password"
               value={formData.confirmPassword}
               onChange={handleChange}
-              className={errors.confirmPassword ? 'error-input' : ''}
+              className={`auth-input ${errors.confirmPassword ? 'is-invalid' : ''}`}
             />
             {errors.confirmPassword && <span className="error-text">{errors.confirmPassword}</span>}
           </div>
           
-          <button className="register-btn" onClick={handleRegister}>
+          <button className="btn auth-btn" onClick={handleRegister}>
             REGISTER
           </button>
-          <p className="login-link">
+          <p className="auth-footer">
             Already have an account? <Link to="/login">Login</Link>
           </p>
         </div>

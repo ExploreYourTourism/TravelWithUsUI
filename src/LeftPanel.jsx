@@ -2,7 +2,7 @@ import charminar from "./assets/images/charminar.jpg";
 
 function LeftPanel({ title, description }) {
   return (
-    <div className="left-panel">
+    <div className="auth-left">
       <img src={charminar} alt="Travel" className="travel-image" />
       <div className="overlay">
         <h1>{title}</h1>
